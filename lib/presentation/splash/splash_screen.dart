@@ -32,12 +32,9 @@ class _SplashScreenState extends State<SplashScreen> {
           SizedBox(
             height: 10.h,
           ),
-          const Text(
+          Text(
             Strings.appName,
-            style: TextStyle(
-              fontSize: 30,
-              fontWeight: FontWeight.bold,
-            ),
+            style: Theme.of(context).textTheme.labelSmall,
           ),
         ],
       ),

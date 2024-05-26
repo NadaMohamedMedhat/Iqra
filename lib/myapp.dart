@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:iqra/config/theme/app_theme.dart';
 
 import 'core/utils/routes.dart';
 import 'presentation/home/home_screen.dart';
@@ -16,7 +17,8 @@ class MyApp extends StatelessWidget {
       minTextAdapt: true,
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        initialRoute: Routes.splash,
+        initialRoute: Routes.home,
+        theme:AppTheme.lightTheme,
         routes: {
           Routes.splash: (context) => const SplashScreen(),
           Routes.home: (context) => const HomeScreen(),
