@@ -36,6 +36,16 @@ class _HomeScreenState extends State<HomeScreen> {
       child: Scaffold(
         appBar: AppBar(
           title: const Text(Strings.appName),
+          actions: [
+            IconButton(
+              onPressed: () {},
+              icon: const Icon(Icons.language_outlined),
+            ),
+            IconButton(
+              onPressed: () {},
+              icon: const Icon(Icons.light_mode_outlined),
+            ),
+          ],
         ),
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: currentNavIndex,
