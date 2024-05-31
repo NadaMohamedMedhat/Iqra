@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:iqra/presentation/home/tabs/quran/sura_widget.dart';
 
 class QuranTab extends StatelessWidget {
   List<String> suraNames = [
@@ -257,9 +258,21 @@ class QuranTab extends StatelessWidget {
               color: Theme.of(context).colorScheme.primary,
               thickness: 5.h,
             ),
-            Text(
-              'Sura Name',
-              style: Theme.of(context).textTheme.titleMedium,
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'verses Number',
+                    style: Theme.of(context).textTheme.titleMedium,
+                  ),
+                  Text(
+                    'Sura Name',
+                    style: Theme.of(context).textTheme.titleMedium,
+                  ),
+                ],
+              ),
             ),
             Divider(
               color: Theme.of(context).colorScheme.primary,
@@ -267,14 +280,12 @@ class QuranTab extends StatelessWidget {
             ),
             Expanded(
               child: ListView.separated(
-                itemBuilder: (context, index) => InkWell(
-                  onTap: (){
-                    
-                  },
-                  child: Text(
-                    suraNames[index],
-                    style: Theme.of(context).textTheme.titleMedium,
-                    textAlign: TextAlign.center,
+                itemBuilder: (context, index) => Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 30),
+                  child:SuraWidget(
+                    suraName: suraNames[index],
+                    versesNumber: versesNumber[index].toString(),
+                    index: index,
                   ),
                 ),
                 separatorBuilder: (context, index) => Divider(

@@ -4,6 +4,7 @@ import 'package:iqra/config/theme/app_theme.dart';
 
 import 'core/utils/routes.dart';
 import 'presentation/home/home_screen.dart';
+import 'presentation/home/tabs/quran/sura_details_screen.dart';
 import 'presentation/splash/splash_screen.dart';
 
 class MyApp extends StatelessWidget {
@@ -22,6 +23,7 @@ class MyApp extends StatelessWidget {
         routes: {
           Routes.splash: (context) => const SplashScreen(),
           Routes.home: (context) => const HomeScreen(),
+          Routes.suraDetailsScreen: (context) =>  SuraDetailsScreen(),
         },
       ),
     );
