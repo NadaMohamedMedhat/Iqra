@@ -18,6 +18,7 @@ class AppTheme {
     colorScheme: ColorScheme.fromSeed(
       seedColor: AppColors.primaryLightColor,
       primary: AppColors.primaryLightColor,
+      secondary: AppColors.secondaryLightColor,
     ),
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
       backgroundColor: AppColors.primaryLightColor,
