@@ -55,11 +55,24 @@ class _SebhaTabState extends State<SebhaTab> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: const Text('Sebha'),
-          content: const Text('Click on sebha or on doaa to start tsbeh'),
+          title: Text(
+            'Sebha',
+            style: Theme.of(context).textTheme.titleMedium,
+          ),
+          content: Text(
+            'Click on sebha or on doaa to start tasbeeh',
+            style: Theme.of(context).textTheme.titleMedium?.copyWith(
+              fontSize: 15.sp
+            ),
+          ),
           actions: [
             ElevatedButton(
-              child: const Text('OK'),
+              child: Text(
+                'OK',
+                style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                  fontSize: 10.sp
+                ),
+              ),
               onPressed: () {
                 Navigator.of(context).pop();
               },
