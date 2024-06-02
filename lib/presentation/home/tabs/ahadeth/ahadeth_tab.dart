@@ -2,11 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class AhadethTab extends StatelessWidget {
-  const AhadethTab({super.key});
+import 'hadeth_model.dart';
+import 'hadeth_widget.dart';
+
+class AhadethTab extends StatefulWidget {
+  AhadethTab({super.key});
 
   @override
+  State<AhadethTab> createState() => _AhadethTabState();
+}
+
+class _AhadethTabState extends State<AhadethTab> {
+  @override
   Widget build(BuildContext context) {
+    if (oneHadeth.isEmpty) {
+      readAhadethFiles();
+    }
     return Scaffold(
       body: Column(
         children: [
@@ -16,25 +27,56 @@ class AhadethTab extends StatelessWidget {
           SizedBox(
             height: 5.h,
           ),
-          Divider(
-            color: Theme.of(context).colorScheme.primary,
-            thickness: 5.h,
+          Container(
+            width: double.infinity,
+            padding: EdgeInsets.symmetric(vertical: 2.h),
+            decoration: BoxDecoration(
+              border: Border.symmetric(
+                horizontal: BorderSide(
+                  color: Theme.of(context).colorScheme.primary,
+                  width: 5.h,
+                ),
+              ),
+            ),
+            child: Text(
+              textAlign: TextAlign.center,
+              'Ahadeth',
+              style: Theme.of(context).textTheme.titleMedium,
+            ),
           ),
-          Text(
-            'Ahadeth',
-            style: Theme.of(context).textTheme.titleMedium,
-          ),
-          Divider(
-            color: Theme.of(context).colorScheme.primary,
-            thickness: 5.h,
-          ),
+          oneHadeth.isNotEmpty
+              ? Expanded(
+                  child: ListView.separated(
+                    itemBuilder: (context, index) => HadethWidget(
+                      hadethModel: oneHadeth[index],
+                    ),
+                    separatorBuilder: (context, index) => Divider(
+                      color: Theme.of(context).colorScheme.primary,
+                      thickness: 5.h,
+                    ),
+                    itemCount: oneHadeth.length,
+                  ),
+                )
+              : const Center(child: CircularProgressIndicator()),
         ],
       ),
     );
   }
 
-  readAhadethFiles(int index) async {
-    String ahadethContent =
+  List<HadethModel> oneHadeth = [];
+
+  void readAhadethFiles() async {
+    String readAllAhadeth =
         await rootBundle.loadString('assets/files/ahadeth.txt');
+    List<String> hadethSplitted = readAllAhadeth.trim().split('#');
+    for (int i = 0; i < hadethSplitted.length; i++) {
+      List<String> oneHadethSplitted = hadethSplitted[i].trim().split('\n');
+      String hadethTitle = oneHadethSplitted[0];
+      oneHadethSplitted.removeAt(0);
+      String hadethContent = oneHadethSplitted.join('');
+
+      oneHadeth.add(HadethModel(title: hadethTitle, content: hadethContent));
+    }
+    setState(() {});
   }
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:iqra/config/theme/app_theme.dart';
+import 'package:iqra/presentation/home/tabs/ahadeth/hadeth_details_screen.dart';
 
 import 'core/utils/routes.dart';
 import 'presentation/home/home_screen.dart';
@@ -24,6 +25,7 @@ class MyApp extends StatelessWidget {
           Routes.splash: (context) => const SplashScreen(),
           Routes.home: (context) => const HomeScreen(),
           Routes.suraDetailsScreen: (context) =>  SuraDetailsScreen(),
+          Routes.hadethDetailsScreen: (context) =>  HadethDetailsScreen(),
         },
       ),
     );

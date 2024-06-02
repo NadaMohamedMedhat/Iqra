@@ -282,7 +282,7 @@ class QuranTab extends StatelessWidget {
               child: ListView.separated(
                 itemBuilder: (context, index) => Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 30),
-                  child:SuraWidget(
+                  child: SuraWidget(
                     suraName: suraNames[index],
                     versesNumber: versesNumber[index].toString(),
                     index: index,

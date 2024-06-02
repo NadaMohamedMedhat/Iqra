@@ -45,7 +45,6 @@ class AppTheme {
         color: Colors.black,
         fontSize: 25,
         fontWeight: FontWeight.w600,
-
       ),
     ),
   );
