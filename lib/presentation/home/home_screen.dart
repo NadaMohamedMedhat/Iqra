@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_islamic_icons/flutter_islamic_icons.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../core/utils/strings.dart';
 import 'tabs/ahadeth/ahadeth_tab.dart';
@@ -19,7 +20,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   List<Widget> tabs = [
     QuranTab(),
-    const AhadethTab(),
+    AhadethTab(),
     SebhaTab(),
     const RadioTab(),
   ];
@@ -38,7 +39,77 @@ class _HomeScreenState extends State<HomeScreen> {
           title: const Text(Strings.appName),
           actions: [
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                showDialog(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return AlertDialog(
+                        title: Text(
+                          "Language",
+                          style: Theme.of(context).textTheme.titleMedium,
+                        ),
+                        actions: [
+                          Column(
+                            children: [
+                              InkWell(
+                                onTap: () {
+                                  // TODO: localization arabic
+                                },
+                                child: Row(
+                                  children: [
+                                    Image.asset(
+                                      'assets/images/egypt.png',
+                                      height: 30.h,
+                                    ),
+                                    SizedBox(
+                                      width: 10.w,
+                                    ),
+                                    Text(
+                                      'Arabic',
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .titleMedium
+                                          ?.copyWith(
+                                            fontSize: 20.sp,
+                                          ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              SizedBox(
+                                height: 20.h,
+                              ),
+                              InkWell(
+                                onTap: () {
+                                  // TODO: localization english
+                                },
+                                child: Row(
+                                  children: [
+                                    Image.asset(
+                                      'assets/images/us.png',
+                                      height: 30.h,
+                                    ),
+                                    SizedBox(
+                                      width: 10.w,
+                                    ),
+                                    Text(
+                                      'English',
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .titleMedium
+                                          ?.copyWith(
+                                            fontSize: 20.sp,
+                                          ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      );
+                    });
+              },
               icon: const Icon(Icons.language_outlined),
             ),
             IconButton(
