@@ -79,7 +79,7 @@ class AppTheme {
       secondary: AppColors.secondaryDarkColor,
     ),
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
-      backgroundColor: AppColors.primaryLightColor,
+      backgroundColor: AppColors.primaryDarkColor,
       selectedIconTheme: IconThemeData(
         color:AppColors.secondaryDarkColor,
         size: 32,
