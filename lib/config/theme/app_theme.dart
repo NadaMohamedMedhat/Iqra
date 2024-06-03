@@ -20,16 +20,29 @@ class AppTheme {
       primary: AppColors.primaryLightColor,
       secondary: AppColors.secondaryLightColor,
     ),
-    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
       backgroundColor: AppColors.primaryLightColor,
-      selectedIconTheme: IconThemeData(
+      selectedIconTheme: const IconThemeData(
         color: Colors.black,
         size: 32,
       ),
-      unselectedIconTheme: IconThemeData(
+      unselectedIconTheme: const IconThemeData(
         color: Colors.white,
         size: 28,
       ),
+      selectedLabelStyle: TextStyle(
+        fontFamily: GoogleFonts.elMessiri().fontFamily,
+        fontSize: 14,
+        fontWeight: FontWeight.bold,
+      ),
+      unselectedLabelStyle: TextStyle(
+        fontFamily: GoogleFonts.elMessiri().fontFamily,
+        fontSize: 12,
+        fontWeight: FontWeight.bold,
+      ),
+      unselectedItemColor: Colors.white,
+      selectedItemColor: Colors.black,
+      showUnselectedLabels: true,
     ),
     textTheme: TextTheme(
       //use for name of app in splash screen
@@ -48,5 +61,62 @@ class AppTheme {
       ),
     ),
   );
-  static ThemeData darkTheme = ThemeData();
+  static ThemeData darkTheme = ThemeData(
+    scaffoldBackgroundColor: Colors.transparent,
+    appBarTheme: AppBarTheme(
+      color: Colors.transparent,
+      centerTitle: true,
+      titleTextStyle: TextStyle(
+        fontFamily: GoogleFonts.cairo().fontFamily,
+        color: Colors.white,
+        fontSize: 30,
+        fontWeight: FontWeight.bold,
+      ),
+    ),
+    colorScheme: ColorScheme.fromSeed(
+      seedColor: AppColors.primaryDarkColor,
+      primary: AppColors.primaryDarkColor,
+      secondary: AppColors.secondaryDarkColor,
+    ),
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      backgroundColor: AppColors.primaryLightColor,
+      selectedIconTheme: IconThemeData(
+        color:AppColors.secondaryDarkColor,
+        size: 32,
+      ),
+      unselectedIconTheme: const IconThemeData(
+        color: Colors.white,
+        size: 28,
+      ),
+      selectedLabelStyle: TextStyle(
+        fontFamily: GoogleFonts.elMessiri().fontFamily,
+        fontSize: 14,
+        fontWeight: FontWeight.bold,
+      ),
+      unselectedLabelStyle: TextStyle(
+        fontFamily: GoogleFonts.elMessiri().fontFamily,
+        fontSize: 12,
+        fontWeight: FontWeight.bold,
+      ),
+      unselectedItemColor: Colors.white,
+      selectedItemColor: AppColors.secondaryDarkColor,
+      showUnselectedLabels: true,
+    ),
+    textTheme: TextTheme(
+      //use for name of app in splash screen
+      labelSmall: TextStyle(
+        fontFamily: GoogleFonts.elMessiri().fontFamily,
+        color: Colors.white,
+        fontSize: 30,
+        fontWeight: FontWeight.bold,
+      ),
+      //quran tab row
+      titleMedium: TextStyle(
+        fontFamily: GoogleFonts.elMessiri().fontFamily,
+        color: Colors.white,
+        fontSize: 25,
+        fontWeight: FontWeight.w600,
+      ),
+    ),
+  );
 }
