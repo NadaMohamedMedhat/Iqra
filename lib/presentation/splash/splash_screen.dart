@@ -1,9 +1,9 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lottie/lottie.dart';
 
 import '../../core/utils/routes.dart';
-import '../../core/utils/strings.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -33,7 +33,7 @@ class _SplashScreenState extends State<SplashScreen> {
             height: 10.h,
           ),
           Text(
-            Strings.appName,
+            "iqra".tr(),
             style: Theme.of(context).textTheme.labelSmall,
           ),
         ],

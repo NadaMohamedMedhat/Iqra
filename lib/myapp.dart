@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:iqra/config/theme/app_theme.dart';
@@ -18,6 +19,9 @@ class MyApp extends StatelessWidget {
       designSize: const Size(412, 870),
       minTextAdapt: true,
       child: MaterialApp(
+        localizationsDelegates: context.localizationDelegates,
+        supportedLocales: context.supportedLocales,
+        locale: context.locale,
         debugShowCheckedModeBanner: false,
         initialRoute: Routes.home,
         theme:AppTheme.lightTheme,
@@ -25,7 +29,7 @@ class MyApp extends StatelessWidget {
           Routes.splash: (context) => const SplashScreen(),
           Routes.home: (context) => const HomeScreen(),
           Routes.suraDetailsScreen: (context) =>  SuraDetailsScreen(),
-          Routes.hadethDetailsScreen: (context) =>  HadethDetailsScreen(),
+          Routes.hadethDetailsScreen: (context) =>  const HadethDetailsScreen(),
         },
       ),
     );

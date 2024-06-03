@@ -1,8 +1,8 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_islamic_icons/flutter_islamic_icons.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../core/utils/strings.dart';
 import 'tabs/ahadeth/ahadeth_tab.dart';
 import 'tabs/quran/quran_tab.dart';
 import 'tabs/radio/radio_tab.dart';
@@ -36,7 +36,7 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       child: Scaffold(
         appBar: AppBar(
-          title: const Text(Strings.appName),
+          title: Text("iqra".tr()),
           actions: [
             IconButton(
               onPressed: () {
@@ -45,7 +45,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     builder: (BuildContext context) {
                       return AlertDialog(
                         title: Text(
-                          "Language",
+                          "language".tr(),
                           style: Theme.of(context).textTheme.titleMedium,
                         ),
                         actions: [
@@ -53,7 +53,8 @@ class _HomeScreenState extends State<HomeScreen> {
                             children: [
                               InkWell(
                                 onTap: () {
-                                  // TODO: localization arabic
+                                  context.setLocale(const Locale('ar'));
+                                 Navigator.of(context).pop();
                                 },
                                 child: Row(
                                   children: [
@@ -65,7 +66,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                       width: 10.w,
                                     ),
                                     Text(
-                                      'Arabic',
+                                      "arabic".tr(),
                                       style: Theme.of(context)
                                           .textTheme
                                           .titleMedium
@@ -81,7 +82,8 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                               InkWell(
                                 onTap: () {
-                                  // TODO: localization english
+                                  context.setLocale(const Locale('en'));
+                                  Navigator.of(context).pop();
                                 },
                                 child: Row(
                                   children: [
@@ -93,7 +95,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                       width: 10.w,
                                     ),
                                     Text(
-                                      'English',
+                                      "english".tr(),
                                       style: Theme.of(context)
                                           .textTheme
                                           .titleMedium
@@ -130,25 +132,25 @@ class _HomeScreenState extends State<HomeScreen> {
               backgroundColor:
                   Theme.of(context).bottomNavigationBarTheme.backgroundColor,
               icon: const Icon(FlutterIslamicIcons.quran2),
-              label: Strings.quran,
+              label: "quran".tr(),
             ),
             BottomNavigationBarItem(
               backgroundColor:
                   Theme.of(context).bottomNavigationBarTheme.backgroundColor,
               icon: const Icon(FlutterIslamicIcons.solidMohammad),
-              label: Strings.ahadeth,
+              label: "ahadeth".tr(),
             ),
             BottomNavigationBarItem(
               backgroundColor:
                   Theme.of(context).bottomNavigationBarTheme.backgroundColor,
               icon: const Icon(FlutterIslamicIcons.tasbih),
-              label: Strings.sebha,
+              label: "sebha".tr(),
             ),
             BottomNavigationBarItem(
               backgroundColor:
                   Theme.of(context).bottomNavigationBarTheme.backgroundColor,
               icon: const Icon(Icons.radio),
-              label: Strings.radio,
+              label: "radio".tr(),
             ),
           ],
         ),

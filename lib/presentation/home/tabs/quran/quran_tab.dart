@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:iqra/presentation/home/tabs/quran/sura_widget.dart';
@@ -264,11 +265,11 @@ class QuranTab extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    'verses Number',
+                    "verses_number".tr(),
                     style: Theme.of(context).textTheme.titleMedium,
                   ),
                   Text(
-                    'Sura Name',
+                    "sura_name".tr(),
                     style: Theme.of(context).textTheme.titleMedium,
                   ),
                 ],

@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -56,11 +57,11 @@ class _SebhaTabState extends State<SebhaTab> {
       builder: (BuildContext context) {
         return AlertDialog(
           title: Text(
-            'Sebha',
+            "sebha".tr(),
             style: Theme.of(context).textTheme.titleMedium,
           ),
           content: Text(
-            'Click on sebha or on doaa to start tasbeeh',
+            "alert_message".tr(),
             style: Theme.of(context).textTheme.titleMedium?.copyWith(
               fontSize: 15.sp
             ),
@@ -68,7 +69,7 @@ class _SebhaTabState extends State<SebhaTab> {
           actions: [
             ElevatedButton(
               child: Text(
-                'OK',
+                "ok".tr(),
                 style: Theme.of(context).textTheme.titleMedium?.copyWith(
                   fontSize: 10.sp
                 ),
@@ -122,7 +123,7 @@ class _SebhaTabState extends State<SebhaTab> {
           child: Column(
             children: [
               Text(
-                'عدد التسبيح',
+                "tasbeeh_count".tr(),
                 style: Theme.of(context).textTheme.titleMedium,
               ),
               const SizedBox(
