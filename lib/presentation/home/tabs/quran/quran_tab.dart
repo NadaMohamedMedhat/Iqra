@@ -241,63 +241,46 @@ class QuranTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: const BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage('assets/images/home_background.png'),
-          fit: BoxFit.fill,
-        ),
-      ),
-      child: Scaffold(
-        body: Column(
-          children: [
-            Image.asset('assets/images/quran_tab_image.png'),
-            SizedBox(
-              height: 5.h,
-            ),
-            Divider(
-              color: Theme.of(context).colorScheme.primary,
-              thickness: 5.h,
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    "verses_number".tr(),
-                    style: Theme.of(context).textTheme.titleMedium,
-                  ),
-                  Text(
-                    "sura_name".tr(),
-                    style: Theme.of(context).textTheme.titleMedium,
-                  ),
-                ],
-              ),
-            ),
-            Divider(
-              color: Theme.of(context).colorScheme.primary,
-              thickness: 5.h,
-            ),
-            Expanded(
-              child: ListView.separated(
-                itemBuilder: (context, index) => Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 30),
-                  child: SuraWidget(
-                    suraName: suraNames[index],
-                    versesNumber: versesNumber[index].toString(),
-                    index: index,
-                  ),
+    return Scaffold(
+      body: Column(
+        children: [
+          Image.asset('assets/images/quran_tab_image.png'),
+          SizedBox(
+            height: 5.h,
+          ),
+          const Divider(),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 8),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  "verses_number".tr(),
+                  style: Theme.of(context).textTheme.titleMedium,
                 ),
-                separatorBuilder: (context, index) => Divider(
-                  color: Theme.of(context).colorScheme.primary,
-                  thickness: 5.h,
+                Text(
+                  "sura_name".tr(),
+                  style: Theme.of(context).textTheme.titleMedium,
                 ),
-                itemCount: suraNames.length,
-              ),
+              ],
             ),
-          ],
-        ),
+          ),
+          const Divider(),
+          Expanded(
+            child: ListView.separated(
+              itemBuilder: (context, index) => Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 30),
+                child: SuraWidget(
+                  suraName: suraNames[index],
+                  versesNumber: versesNumber[index].toString(),
+                  index: index,
+                ),
+              ),
+              separatorBuilder: (context, index) => const Divider(),
+              itemCount: suraNames.length,
+            ),
+          ),
+        ],
       ),
     );
   }

@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:iqra/presentation/home/tabs/quran/sura_model.dart';
+import 'package:provider/provider.dart';
+
+import '../../../provider/theme_provider.dart';
 
 class SuraDetailsScreen extends StatefulWidget {
   SuraDetailsScreen({super.key});
@@ -13,15 +16,18 @@ class SuraDetailsScreen extends StatefulWidget {
 class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
   @override
   Widget build(BuildContext context) {
+    ThemeProvider themeProvider = Provider.of<ThemeProvider>(context);
     SuraModel suraModel =
         ModalRoute.of(context)!.settings.arguments as SuraModel;
     if (ayatLines.isEmpty) {
       readSuraFile(suraModel.index);
     }
     return Container(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage('assets/images/home_background.png'),
+          image: AssetImage(themeProvider.themeMode == ThemeMode.dark
+              ? 'assets/images/dark_bg.png'
+              : 'assets/images/home_background.png'),
           fit: BoxFit.fill,
         ),
       ),
@@ -34,6 +40,9 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
         ),
         body: Card(
           elevation: 10,
+          color: themeProvider.themeMode == ThemeMode.dark
+              ? Theme.of(context).colorScheme.primary
+              : Colors.white.withOpacity(0.60),
           child: ayatLines.isNotEmpty
               ? ListView.separated(
                   itemBuilder: (context, index) => Text(
@@ -44,10 +53,7 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
                     textDirection: TextDirection.rtl,
                     textAlign: TextAlign.center,
                   ),
-                  separatorBuilder: (context, index) => Divider(
-                    color: Theme.of(context).colorScheme.primary,
-                    thickness: 5.h,
-                  ),
+                  separatorBuilder: (context, index) => const Divider(),
                   itemCount: ayatLines.length,
                 )
               : const Center(

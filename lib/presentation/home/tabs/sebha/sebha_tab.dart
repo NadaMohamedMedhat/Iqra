@@ -3,6 +3,9 @@ import 'dart:async';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
+
+import '../../../provider/theme_provider.dart';
 
 class SebhaTab extends StatefulWidget {
   @override
@@ -55,24 +58,28 @@ class _SebhaTabState extends State<SebhaTab> {
     showDialog(
       context: context,
       builder: (BuildContext context) {
+        //ThemeProvider themeProvider = Provider.of<ThemeProvider>(context);
         return AlertDialog(
+          backgroundColor:Theme.of(context).colorScheme.primary,
           title: Text(
             "sebha".tr(),
             style: Theme.of(context).textTheme.titleMedium,
           ),
           content: Text(
             "alert_message".tr(),
-            style: Theme.of(context).textTheme.titleMedium?.copyWith(
-              fontSize: 15.sp
-            ),
+            style: Theme.of(context)
+                .textTheme
+                .titleMedium
+                ?.copyWith(fontSize: 15.sp),
           ),
           actions: [
             ElevatedButton(
               child: Text(
                 "ok".tr(),
-                style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                  fontSize: 10.sp
-                ),
+                style: Theme.of(context)
+                    .textTheme
+                    .titleMedium
+                    ?.copyWith(fontSize: 10.sp,color: Colors.black),
               ),
               onPressed: () {
                 Navigator.of(context).pop();

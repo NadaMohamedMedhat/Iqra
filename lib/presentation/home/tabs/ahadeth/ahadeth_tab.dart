@@ -2,7 +2,9 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
 
+import '../../../provider/theme_provider.dart';
 import 'hadeth_model.dart';
 import 'hadeth_widget.dart';
 
@@ -16,6 +18,7 @@ class AhadethTab extends StatefulWidget {
 class _AhadethTabState extends State<AhadethTab> {
   @override
   Widget build(BuildContext context) {
+    ThemeProvider themeProvider = Provider.of<ThemeProvider>(context);
     if (oneHadeth.isEmpty) {
       readAhadethFiles();
     }
@@ -34,7 +37,9 @@ class _AhadethTabState extends State<AhadethTab> {
             decoration: BoxDecoration(
               border: Border.symmetric(
                 horizontal: BorderSide(
-                  color: Theme.of(context).colorScheme.primary,
+                  color: themeProvider.themeMode == ThemeMode.light
+                      ? Theme.of(context).colorScheme.primary
+                      : Theme.of(context).colorScheme.secondary,
                   width: 5.h,
                 ),
               ),
@@ -51,10 +56,7 @@ class _AhadethTabState extends State<AhadethTab> {
                     itemBuilder: (context, index) => HadethWidget(
                       hadethModel: oneHadeth[index],
                     ),
-                    separatorBuilder: (context, index) => Divider(
-                      color: Theme.of(context).colorScheme.primary,
-                      thickness: 5.h,
-                    ),
+                    separatorBuilder: (context, index) => const Divider(),
                     itemCount: oneHadeth.length,
                   ),
                 )

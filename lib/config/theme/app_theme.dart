@@ -60,6 +60,15 @@ class AppTheme {
         fontWeight: FontWeight.w600,
       ),
     ),
+    dividerTheme: const DividerThemeData(
+      color: AppColors.primaryLightColor,
+      thickness: 5,
+    ),
+    iconButtonTheme: IconButtonThemeData(
+      style: ButtonStyle(
+        iconColor: WidgetStateProperty.all(Colors.black),
+      ),
+    ),
   );
   static ThemeData darkTheme = ThemeData(
     scaffoldBackgroundColor: Colors.transparent,
@@ -81,7 +90,7 @@ class AppTheme {
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
       backgroundColor: AppColors.primaryDarkColor,
       selectedIconTheme: IconThemeData(
-        color:AppColors.secondaryDarkColor,
+        color: AppColors.secondaryDarkColor,
         size: 32,
       ),
       unselectedIconTheme: const IconThemeData(
@@ -116,6 +125,15 @@ class AppTheme {
         color: Colors.white,
         fontSize: 25,
         fontWeight: FontWeight.w600,
+      ),
+    ),
+    dividerTheme: DividerThemeData(
+      color: AppColors.secondaryDarkColor,
+      thickness: 5,
+    ),
+    iconButtonTheme: IconButtonThemeData(
+      style: ButtonStyle(
+        iconColor: WidgetStateProperty.all(AppColors.secondaryDarkColor),
       ),
     ),
   );

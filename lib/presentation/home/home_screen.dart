@@ -2,6 +2,8 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_islamic_icons/flutter_islamic_icons.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:iqra/presentation/provider/theme_provider.dart';
+import 'package:provider/provider.dart';
 
 import 'tabs/ahadeth/ahadeth_tab.dart';
 import 'tabs/quran/quran_tab.dart';
@@ -27,10 +29,13 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    ThemeProvider themeProvider = Provider.of<ThemeProvider>(context);
     return Container(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage('assets/images/home_background.png'),
+          image: AssetImage(themeProvider.themeMode == ThemeMode.light
+              ? 'assets/images/home_background.png'
+              : 'assets/images/dark_bg.png'),
           fit: BoxFit.fill,
         ),
       ),
@@ -44,6 +49,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     context: context,
                     builder: (BuildContext context) {
                       return AlertDialog(
+                        backgroundColor: Theme.of(context).colorScheme.primary,
                         title: Text(
                           "language".tr(),
                           style: Theme.of(context).textTheme.titleMedium,
@@ -54,7 +60,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               InkWell(
                                 onTap: () {
                                   context.setLocale(const Locale('ar'));
-                                 Navigator.of(context).pop();
+                                  Navigator.of(context).pop();
                                 },
                                 child: Row(
                                   children: [
@@ -115,8 +121,15 @@ class _HomeScreenState extends State<HomeScreen> {
               icon: const Icon(Icons.language_outlined),
             ),
             IconButton(
-              onPressed: () {},
-              icon: const Icon(Icons.light_mode_outlined),
+              onPressed: () {
+                themeProvider.changeTheme(
+                    themeProvider.themeMode == ThemeMode.dark
+                        ? ThemeMode.light
+                        : ThemeMode.dark);
+              },
+              icon: Icon(themeProvider.themeMode == ThemeMode.dark
+                  ? Icons.dark_mode_outlined
+                  : Icons.light_mode_outlined),
             ),
           ],
         ),
