@@ -8,7 +8,7 @@ import 'package:provider/provider.dart';
 import 'core/utils/routes.dart';
 import 'presentation/home/home_screen.dart';
 import 'presentation/home/tabs/quran/sura_details_screen.dart';
-import 'presentation/provider/theme_provider.dart';
+import 'shared/provider/theme_provider.dart';
 import 'presentation/splash/splash_screen.dart';
 
 class MyApp extends StatelessWidget {

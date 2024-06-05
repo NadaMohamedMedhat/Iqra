@@ -4,7 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 
-import '../../../provider/theme_provider.dart';
+import '../../../../shared/provider/theme_provider.dart';
 import 'hadeth_model.dart';
 import 'hadeth_widget.dart';
 

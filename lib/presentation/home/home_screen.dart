@@ -2,7 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_islamic_icons/flutter_islamic_icons.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:iqra/presentation/provider/theme_provider.dart';
+import 'package:iqra/shared/provider/theme_provider.dart';
 import 'package:provider/provider.dart';
 
 import 'tabs/ahadeth/ahadeth_tab.dart';

@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:iqra/presentation/home/tabs/quran/sura_model.dart';
 import 'package:provider/provider.dart';
 
-import '../../../provider/theme_provider.dart';
+import '../../../../shared/provider/theme_provider.dart';
 
 class SuraDetailsScreen extends StatefulWidget {
   SuraDetailsScreen({super.key});

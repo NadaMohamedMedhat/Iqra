@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:iqra/presentation/home/tabs/ahadeth/hadeth_model.dart';
 import 'package:provider/provider.dart';
 
-import '../../../provider/theme_provider.dart';
+import '../../../../shared/provider/theme_provider.dart';
 
 class HadethDetailsScreen extends StatefulWidget {
   const HadethDetailsScreen({super.key});

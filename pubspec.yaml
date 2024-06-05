@@ -42,6 +42,7 @@ dependencies:
   flutter_islamic_icons: ^1.0.2
   easy_localization: ^3.0.7
   provider: ^6.1.2
+  shared_preferences: ^2.2.3
 
 icons_launcher:
   image_path: "assets/images/iqra.png"
