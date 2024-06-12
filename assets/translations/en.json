@@ -11,5 +11,7 @@
   "arabic": "Arabic",
   "language": "Language",
   "alert_message": "Click on sebha or on doaa to start tasbeeh",
-  "ok": "OK"
+  "ok": "OK",
+  "quran_radio": "Quran Radio",
+  "error": "Error"
 }

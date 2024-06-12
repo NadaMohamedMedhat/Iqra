@@ -27,22 +27,32 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     ThemeProvider themeProvider = Provider.of<ThemeProvider>(context);
-    return Scaffold(
-      backgroundColor: themeProvider.themeMode == ThemeMode.dark
-          ? AppColors.primaryDarkColor
-          : Colors.white,
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Lottie.asset('assets/images/splash.json'),
-          SizedBox(
-            height: 10.h,
-          ),
-          Text(
-            "iqra".tr(),
-            style: Theme.of(context).textTheme.labelSmall,
-          ),
-        ],
+    return Container(
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage(themeProvider.themeMode == ThemeMode.light
+              ? 'assets/images/home_background.png'
+              : 'assets/images/dark_bg.png'),
+          fit: BoxFit.fill,
+        ),
+      ),
+      child: Scaffold(
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Lottie.asset('assets/images/splash.json'),
+            SizedBox(
+              height: 10.h,
+            ),
+            Text(
+              "iqra".tr(),
+              style: Theme
+                  .of(context)
+                  .textTheme
+                  .labelSmall,
+            ),
+          ],
+        ),
       ),
     );
   }
