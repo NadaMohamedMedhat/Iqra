@@ -1,7 +1,10 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:iqra/core/utils/colors.dart';
+import 'package:iqra/shared/provider/theme_provider.dart';
 import 'package:lottie/lottie.dart';
+import 'package:provider/provider.dart';
 
 import '../../core/utils/routes.dart';
 
@@ -23,8 +26,11 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
+    ThemeProvider themeProvider = Provider.of<ThemeProvider>(context);
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: themeProvider.themeMode == ThemeMode.dark
+          ? AppColors.primaryDarkColor
+          : Colors.white,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
