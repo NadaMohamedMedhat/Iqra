@@ -1,0 +1,17 @@
+{
+  "iqra": "Iqra",
+  "radio": "Radio",
+  "quran": "Quran",
+  "sebha": "Sebha",
+  "ahadeth": "Ahadeth",
+  "sura_name": "Sura Name",
+  "verses_number": "Verse Number",
+  "tasbeeh_count": "Tasbeeh Count",
+  "english": "English",
+  "arabic": "Arabic",
+  "language": "Language",
+  "alert_message": "Click on sebha or on doaa to start tasbeeh",
+  "ok": "OK",
+  "quran_radio": "Quran Radio",
+  "error": "Error"
+}

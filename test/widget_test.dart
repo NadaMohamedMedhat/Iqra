@@ -8,7 +8,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:iqra/main.dart';
+
 import 'package:iqra/myapp.dart';
 
 void main() {

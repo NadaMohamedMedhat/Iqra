@@ -1,9 +1,12 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:iqra/core/utils/colors.dart';
+import 'package:iqra/shared/provider/theme_provider.dart';
 import 'package:lottie/lottie.dart';
+import 'package:provider/provider.dart';
 
 import '../../core/utils/routes.dart';
-import '../../core/utils/strings.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -23,23 +26,33 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Lottie.asset('assets/images/splash.json'),
-          SizedBox(
-            height: 10.h,
-          ),
-          const Text(
-            Strings.appName,
-            style: TextStyle(
-              fontSize: 30,
-              fontWeight: FontWeight.bold,
+    ThemeProvider themeProvider = Provider.of<ThemeProvider>(context);
+    return Container(
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage(themeProvider.themeMode == ThemeMode.light
+              ? 'assets/images/home_background.png'
+              : 'assets/images/dark_bg.png'),
+          fit: BoxFit.fill,
+        ),
+      ),
+      child: Scaffold(
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Lottie.asset('assets/images/splash.json'),
+            SizedBox(
+              height: 10.h,
             ),
-          ),
-        ],
+            Text(
+              "iqra".tr(),
+              style: Theme
+                  .of(context)
+                  .textTheme
+                  .labelSmall,
+            ),
+          ],
+        ),
       ),
     );
   }
