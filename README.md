@@ -20,7 +20,7 @@ Immerse yourself in the beauty of Islam with Iqra and embark on a spiritual jour
 
 # Radio API Link : https://mp3quran.net/ar/api
 
-#Screen Record 
+# Screen Record 
 
 https://github.com/NadaMohamedMedhat/Iqra/assets/76527313/7bd82967-efd8-487d-a3d2-e4d4efd5b24e
 
