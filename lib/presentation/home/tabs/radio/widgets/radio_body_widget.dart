@@ -36,17 +36,23 @@ class RadioBodyWidget extends StatelessWidget {
           height: 10.h,
         ),
         Row(
-          //todo: icons arrange in Arabic language
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             IconButton(
               onPressed: () {
-                radioCubit.previousRadio();
+                context.locale == const Locale('en')
+                    ? radioCubit.previousRadio()
+                    : radioCubit.nextRadio();
               },
-              icon: const Icon(
-                Icons.skip_previous_rounded,
-                size: 40,
-              ),
+              icon: context.locale == const Locale('en')
+                  ? const Icon(
+                      Icons.skip_previous_rounded,
+                      size: 40,
+                    )
+                  : const Icon(
+                      Icons.skip_next_rounded,
+                      size: 40,
+                    ),
             ),
             IconButton(
               onPressed: () {
@@ -64,12 +70,19 @@ class RadioBodyWidget extends StatelessWidget {
             ),
             IconButton(
               onPressed: () {
-                radioCubit.nextRadio();
+                context.locale == const Locale('en')
+                    ? radioCubit.nextRadio()
+                    : radioCubit.previousRadio();
               },
-              icon: const Icon(
-                Icons.skip_next_rounded,
-                size: 40,
-              ),
+              icon: context.locale == const Locale('en')
+                  ? const Icon(
+                      Icons.skip_next_rounded,
+                      size: 40,
+                    )
+                  : const Icon(
+                      Icons.skip_previous_rounded,
+                      size: 40,
+                    ),
             ),
           ],
         ),
