@@ -17,3 +17,10 @@ Experience the beauty of Islamic teachings with Iqra, the ultimate app designed 
 🔐 Secure Preferences: Rest assured that your preferences are securely stored with shared preferences, allowing you to seamlessly transition between languages, themes, and settings.
 
 Immerse yourself in the beauty of Islam with Iqra and embark on a spiritual journey filled with enlightenment and tranquility. 🕌📿✨
+
+# Radio API Link : https://mp3quran.net/ar/api
+
+# Screen Record 
+
+https://github.com/NadaMohamedMedhat/Iqra/assets/76527313/7bd82967-efd8-487d-a3d2-e4d4efd5b24e
+
