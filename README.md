@@ -18,7 +18,8 @@ Experience the beauty of Islamic teachings with Iqra, the ultimate app designed 
 
 Immerse yourself in the beauty of Islam with Iqra and embark on a spiritual journey filled with enlightenment and tranquility. 🕌📿✨
 
-# Radio API Link : https://mp3quran.net/ar/api
+# Radio API Link : 
+https://mp3quran.net/ar/api
 
 # Screen Record 
 
